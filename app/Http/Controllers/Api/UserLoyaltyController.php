@@ -16,7 +16,7 @@ class UserLoyaltyController extends Controller
             'data' => $request->user()->loyalties->map(fn(Loyalty $loyalty) => [
                 'id' => $loyalty->id,
                 'store' => $loyalty->store->name,
-                'photo' => asset($loyalty->store->image),
+                'photo' => asset("storage/".$loyalty->store->image),
                 'points' => $loyalty->points,
                 'foreground_color' => $loyalty->store->foreground_color,
                 'background_color' => $loyalty->store->background_color,

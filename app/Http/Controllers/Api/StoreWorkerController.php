@@ -17,7 +17,7 @@ class StoreWorkerController extends Controller
                 'data' => $request->user()->stores->map(fn(Store $store) => [
                     'id' => $store->id,
                     'store' => $store->name,
-                    'photo' => asset($store->image),
+                    'photo' => asset("storage/".$store->image),
                     'foreground_color' => $store->foreground_color,
                     'background_color' => $store->background_color,
                     'created_at' => $store->created_at,
